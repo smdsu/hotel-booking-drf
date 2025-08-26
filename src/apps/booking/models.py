@@ -8,4 +8,3 @@ class Booking(TimeStampMixin):
     room = models.ForeignKey("rooms.Room", on_delete=models.CASCADE, related_name="bookings")
     check_in = models.DateTimeField()
     check_out = models.DateTimeField()
-    total_price = models.DecimalField(max_digits=10, decimal_places=2)
