@@ -4,14 +4,13 @@ from common.mixins import TimeStampMixin
 
 
 class Room(TimeStampMixin):
-    id = models.UUIDField(primary_key=True, default=uuid.uuid4, editable=False)
-    name = models.CharField(max_length=255)
+    room_id = models.UUIDField(primary_key=True, default=uuid.uuid4, editable=False)
     description = models.TextField()
     price = models.DecimalField(max_digits=10, decimal_places=2)
     active = models.BooleanField(default=True)
 
-    def __repr__(self):
-        return f"<{self.id}> Room {self.name} - {self.price}"
+    def __repr__(self) -> str:
+        return f"<{self.room_id}> Room {self.description} - {self.price}"
 
-    def __str__(self):
-        return self.name
+    def __str__(self) -> uuid.UUID:
+        return self.room_id
