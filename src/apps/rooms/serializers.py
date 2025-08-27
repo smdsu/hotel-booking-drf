@@ -8,10 +8,12 @@ class RoomSerializer(ModelSerializer):
         model = Room
         fields = "__all__"
 
+
 class RoomCreateResponseSerializer(ModelSerializer):
     class Meta:
         model = Room
         fields = ["room_id"]
+
 
 class RoomDetailResponseSerializer(ModelSerializer):
     bookings = BookingSerializer(many=True, read_only=True)
