@@ -13,4 +13,4 @@ class Room(TimeStampMixin):
         return f"<{self.room_id}> Room {self.description} - {self.price}"
 
     def __str__(self) -> uuid.UUID:
-        return self.room_id
+        return str(self.room_id)
