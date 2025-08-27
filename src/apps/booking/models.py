@@ -11,3 +11,9 @@ class Booking(TimeStampMixin):
     )
     check_in = models.DateTimeField()
     check_out = models.DateTimeField()
+
+    def __repr__(self):
+        return f"Booking: {self.id}"
+
+    def __str__(self):
+        return f"Booking on {self.room} - Dates: {self.check_in} - {self.check_out}"
